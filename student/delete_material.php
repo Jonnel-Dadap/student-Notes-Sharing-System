@@ -29,5 +29,6 @@ $sql = "DELETE FROM materials
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_bind_param($stmt, "ii", $id, $user_id);
 mysqli_stmt_execute($stmt);
+
 header("Location: my_materials.php");
 exit;

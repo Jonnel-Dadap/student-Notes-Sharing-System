@@ -72,7 +72,7 @@ $result = mysqli_query($conn, $sql);
                                 <td class="text-end px-4">
                                     <div class="d-flex justify-content-end gap-2">
                                         <a
-                                            href="material.php?id=<?= $material["id"] ?>"
+                                            href="../student/material.php?id=<?= $material["id"] ?>"
                                             class="btn btn-outline-primary btn-sm"
                                             title="View"
                                         >

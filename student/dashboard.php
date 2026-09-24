@@ -65,7 +65,7 @@ $total_materials = $data["total_materials"];
                     </p>
                     <a
                         href="subjects.php"
-                        class="btn btn-outline-primary"
+                        class="btn btn-primary mt-3"
                     >
                         Browse Subjects
                     </a>
