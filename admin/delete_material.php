@@ -2,7 +2,6 @@
 
 $conn = require("../config/database.php");
 require_once "../includes/admin_check.php";
-
 $id = $_GET["id"] ?? null;
 
 if (!$id) {

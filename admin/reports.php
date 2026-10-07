@@ -10,9 +10,7 @@ $sql = "SELECT reports.*, materials.title, users.name
         ORDER BY reports.created_at DESC";
 
 $result = mysqli_query($conn, $sql);
-
 ?>
-
 <?php require_once "../includes/header.php"; ?>
 <?php require_once "../includes/navbar.php"; ?>
 
