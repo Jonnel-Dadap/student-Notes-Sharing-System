@@ -2,17 +2,14 @@
 
 $conn = require("../config/database.php");
 require_once "../includes/admin_check.php";
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $subject_name = trim($_POST["subject_name"]);
-
     if ($subject_name !== "") {
         $stmt = mysqli_prepare($conn, "INSERT INTO subjects (subject_name) VALUES (?)");
         mysqli_stmt_bind_param($stmt, "s", $subject_name);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
     }
-
     header("Location: subjects.php");
     exit;
 }
@@ -29,7 +26,6 @@ $result = mysqli_query($conn, "SELECT * FROM subjects ORDER BY subject_name ASC"
         <h2 class="fw-bold mb-2">Subjects</h2>
         <p class="text-muted mb-0">Manage the subjects available for uploaded materials.</p>
     </div>
-
     <div class="row g-4">
         <div class="col-lg-4">
             <div class="card shadow-sm h-100">
@@ -42,7 +38,6 @@ $result = mysqli_query($conn, "SELECT * FROM subjects ORDER BY subject_name ASC"
                     <p class="text-muted small mb-4">
                         Create a new subject that students can select when uploading materials.
                     </p>
-
                     <form method="POST">
                         <div class="mb-3">
                             <label for="subject_name" class="form-label">Subject Name</label>
@@ -52,10 +47,8 @@ $result = mysqli_query($conn, "SELECT * FROM subjects ORDER BY subject_name ASC"
                                 id="subject_name"
                                 class="form-control"
                                 placeholder="e.g. Programming"
-                                required
-                            >
-                        </div>
-
+                                required          >
+                        </div
                         <button type="submit" class="btn btn-primary w-100">
                             <i class="bi bi-plus-lg me-1"></i>
                             Add Subject
